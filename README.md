@@ -1,24 +1,25 @@
-# README
+Here's how to user fontawesome in your Rails 7 app with Importmaps.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Pin fontawesome
 
-Things you may want to cover:
+Add the following to your `config/importmap.rb` file.
 
-* Ruby version
+```ruby
+pin "@fortawesome/fontawesome-free",
+  to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.1.1/js/all.js"
+```
 
-* System dependencies
+2. Import it in your `app/javascript/application.js` file.
 
-* Configuration
+```javascript
+import "@fortawesome/fontawesome-free";
+```
 
-* Database creation
+3. Use it in your views.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```erb
+<%= link_to "/" do %>
+  <i class="fa-sharp fa-solid fa-house"></i>
+  Click me
+<% end %>
+```
